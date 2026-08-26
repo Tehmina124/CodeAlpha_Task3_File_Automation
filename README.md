@@ -2,7 +2,7 @@
 
 <img src="banner.png" alt="FILE AUTOMATION " width="100%">
 
-# 🤖 AI AUTOMATION
+# 🤖 FILE AUTOMATION
 
 ### ⚡ Smart File Organization with Python
 
