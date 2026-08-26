@@ -1,6 +1,8 @@
 <div align="center">
 
-# 🤖 FILE AUTOMATION
+<img src="banner.png" alt="AI AUTOMATION Banner" width="100%">
+
+# 🤖 AI AUTOMATION
 
 ### ⚡ Smart File Organization with Python
 
@@ -30,25 +32,32 @@
 
 ## 🌟 Project Overview
 
-**FILE AUTOMATION** is a smart Python-based automation tool that organizes files automatically according to their file extensions.
+**AI AUTOMATION** is a Python-based file automation tool developed for **CodeAlpha Internship — Task 3**.
 
-Instead of manually sorting hundreds of files, users can simply upload multiple files and let the application detect, categorize, and organize them automatically.
+The application automatically detects uploaded files based on their extensions and organizes them into appropriate categories.
 
-The application provides a clean and interactive **Streamlit dashboard** with file statistics, automation preview, category summaries, demo mode, and downloadable ZIP packages.
+Instead of manually sorting files, users can upload multiple files and let the application handle the organization automatically.
+
+Built with **Python and Streamlit**, the application provides an interactive dashboard with statistics, automation preview, demo mode, ZIP generation, duplicate filename protection, and downloadable reports.
 
 ---
 
-## 🚀 Live Application
+## 🚀 Live Demo
 
 <div align="center">
 
-### 🎯 Try It Now
+### 🎯 Try AI AUTOMATION Online
 
 <a href="https://codealphatask3fileautomation-vltnvnzsnolsdxwyeztu3a.streamlit.app/">
 
-<img src="https://img.shields.io/badge/OPEN%20FILE%20AUTOMATION-🚀%20LIVE%20APP-blue?style=for-the-badge" alt="Live Application">
+<img src="https://img.shields.io/badge/🚀%20OPEN%20AI%20AUTOMATION-LIVE%20DEMO-blue?style=for-the-badge" alt="Live Demo">
 
 </a>
+
+<br><br>
+
+👉 **Live App:**  
+https://codealphatask3fileautomation-vltnvnzsnolsdxwyeztu3a.streamlit.app/
 
 </div>
 
@@ -60,41 +69,39 @@ The application provides a clean and interactive **Streamlit dashboard** with fi
 <tr>
 <td width="50%">
 
-### 📤 File Upload
+### 📤 Multiple File Upload
+Upload one or multiple files at the same time.
 
-Upload one or multiple files at once.
+### 🤖 Automatic Detection
+Detects file types using their extensions.
 
-### 🤖 Auto Detection
-
-Automatically detects file types using extensions.
-
-### 📂 Smart Organization
-
-Files are automatically assigned to the correct category.
+### 📂 Smart Categorization
+Automatically assigns files to the correct category.
 
 ### 📊 File Statistics
+Displays total files, categories, images, and automation status.
 
-View total files, categories, and category-wise counts.
+### 🔍 Automation Preview
+Preview the destination of every uploaded file.
 
 </td>
 
 <td width="50%">
 
-### 🔍 Automation Preview
-
-Preview where every file will be organized.
-
 ### 🧪 Demo Mode
-
-Generate sample files without uploading your own files.
+Generate sample files for testing without uploading files.
 
 ### 📦 ZIP Generation
-
 Download all organized files as a ZIP package.
 
-### 📋 Automation Report
+### 🛡️ Duplicate Handling
+Prevents duplicate filenames from being overwritten.
 
+### 📋 Automation Report
 Generate and download a detailed text report.
+
+### 🎨 Interactive UI
+Clean and responsive Streamlit dashboard.
 
 </td>
 </tr>
@@ -102,66 +109,137 @@ Generate and download a detailed text report.
 
 ---
 
-## 🗂️ Supported File Types
+## 🗂️ Supported File Categories
 
-| 📁 Category        | 🔗 Extensions                               |
-| ------------------ | ------------------------------------------- |
-| 🖼️ **Images**     | JPG, JPEG, PNG, GIF, BMP, WEBP, SVG, TIFF   |
-| 📄 **Documents**   | DOC, DOCX, TXT, RTF, ODT                    |
-| 📕 **PDF Files**   | PDF                                         |
-| 📊 **Excel Files** | XLS, XLSX, CSV                              |
-| 📽️ **PowerPoint** | PPT, PPTX                                   |
-| 🎵 **Audio**       | MP3, WAV, AAC, FLAC, OGG, M4A               |
-| 🎬 **Video**       | MP4, AVI, MKV, MOV, WMV, FLV, WEBM          |
-| 📦 **Archives**    | ZIP, RAR, 7Z, TAR, GZ                       |
-| 🐍 **Python**      | PY                                          |
-| 💻 **Code**        | HTML, CSS, JS, JAVA, CPP, C, JSON, XML, SQL |
-| 📁 **Other**       | Unknown file extensions                     |
+| Category | Supported Extensions |
+|---|---|
+| 🖼️ **Images** | JPG, JPEG, PNG, GIF, BMP, WEBP, SVG, TIFF |
+| 📄 **Documents** | DOC, DOCX, TXT, RTF, ODT |
+| 📕 **PDF Files** | PDF |
+| 📊 **Excel Files** | XLS, XLSX, CSV |
+| 📽️ **PowerPoint Files** | PPT, PPTX |
+| 🎵 **Audio Files** | MP3, WAV, AAC, FLAC, OGG, M4A |
+| 🎬 **Video Files** | MP4, AVI, MKV, MOV, WMV, FLV, WEBM |
+| 📦 **Archives** | ZIP, RAR, 7Z, TAR, GZ |
+| 🐍 **Python Files** | PY |
+| 💻 **Code Files** | HTML, CSS, JS, JAVA, CPP, C, JSON, XML, SQL |
+| 📁 **Other Files** | Unknown extensions |
 
 ---
 
 ## 🔄 How It Works
 
 ```text
-          📤 UPLOAD FILES
-                 │
-                 ▼
-        🔍 DETECT FILE TYPE
-                 │
-                 ▼
-       🤖 ANALYZE EXTENSION
-                 │
-                 ▼
-        📂 SELECT CATEGORY
-                 │
-                 ▼
-        📊 SHOW PREVIEW
-                 │
-                 ▼
-        🚀 RUN AUTOMATION
-                 │
-                 ▼
-        📦 CREATE ZIP FILE
-                 │
-                 ▼
-          📥 DOWNLOAD
+              📤 UPLOAD FILES
+                    │
+                    ▼
+             🔍 DETECT EXTENSION
+                    │
+                    ▼
+             🤖 ANALYZE FILE TYPE
+                    │
+                    ▼
+              📂 SELECT CATEGORY
+                    │
+                    ▼
+              📊 SHOW PREVIEW
+                    │
+                    ▼
+             🚀 RUN AUTOMATION
+                    │
+                    ▼
+              📦 CREATE ZIP
+                    │
+                    ▼
+             📥 DOWNLOAD FILE
+
+### 🧪 Demo Mode
+
+Generate sample files for quick testing.
+
+### 🚀 One-Click Automation
+
+Organize all files with a single button.
+
+### 📦 ZIP Generation
+
+Download organized files as a ZIP package.
+
+### 🛡️ Duplicate Handling
+
+Automatically rename duplicate filenames.
+
+### 📋 Automation Report
+
+Download a detailed file-organization report.
+
+</td>
+
+</tr>
+</table>
+
+---
+
+## 🗂️ Supported File Categories
+
+| Category                 | Supported Extensions                        |
+| ------------------------ | ------------------------------------------- |
+| 🖼️ **Images**           | JPG, JPEG, PNG, GIF, BMP, WEBP, SVG, TIFF   |
+| 📄 **Documents**         | DOC, DOCX, TXT, RTF, ODT                    |
+| 📕 **PDF Files**         | PDF                                         |
+| 📊 **Excel Files**       | XLS, XLSX, CSV                              |
+| 📽️ **PowerPoint Files** | PPT, PPTX                                   |
+| 🎵 **Audio Files**       | MP3, WAV, AAC, FLAC, OGG, M4A               |
+| 🎬 **Video Files**       | MP4, AVI, MKV, MOV, WMV, FLV, WEBM          |
+| 📦 **Archives**          | ZIP, RAR, 7Z, TAR, GZ                       |
+| 🐍 **Python Files**      | PY                                          |
+| 💻 **Code Files**        | HTML, CSS, JS, JAVA, CPP, C, JSON, XML, SQL |
+| 📁 **Other Files**       | Unknown extensions                          |
+
+---
+
+## 🔄 How It Works
+
+```text
+                 📤 UPLOAD FILES
+                       │
+                       ▼
+                🔍 DETECT EXTENSION
+                       │
+                       ▼
+                 🤖 ANALYZE FILE
+                       │
+                       ▼
+                 📂 SELECT CATEGORY
+                       │
+                       ▼
+                  📊 SHOW PREVIEW
+                       │
+                       ▼
+                🚀 RUN AUTOMATION
+                       │
+                       ▼
+                 📦 CREATE ZIP
+                       │
+                       ▼
+                  📥 DOWNLOAD
 ```
 
 ---
 
 ## 🧪 Demo Mode
 
-Don't have files available?
+Don't have files available for testing?
 
 No problem! 😎
 
-The application includes a built-in **Demo Mode** that creates sample files from different categories.
+The application includes a built-in **Demo Mode** that generates sample files from different categories.
 
 Click:
 
-**🧪 Generate Demo Files**
+> 🧪 **Generate Demo Files**
 
-The application will generate sample files such as:
+The application creates examples such as:
 
 ```text
 demo_photo.jpg
@@ -180,35 +258,28 @@ demo_page.html
 demo_unknown.xyz
 ```
 
-These files can then be analyzed and organized automatically.
+These files can then be analyzed and automatically organized.
 
 ---
 
-## 📊 Dashboard
+## 📊 File Statistics
 
-The application provides useful statistics after files are uploaded.
+Once files are uploaded, the dashboard provides:
 
-### 📦 Total Files
-
-Shows the total number of uploaded files.
-
-### 📁 Categories
-
-Shows how many different file categories were detected.
-
-### 🖼️ Images
-
-Displays the total number of image files.
-
-### 🤖 Automation Status
-
-Shows whether files are ready to be organized.
+| Metric             | Description                    |
+| ------------------ | ------------------------------ |
+| 📦 **Total Files** | Total number of uploaded files |
+| 📁 **Categories**  | Number of detected categories  |
+| 🖼️ **Images**     | Number of image files          |
+| 🤖 **Status**      | Current automation status      |
 
 ---
 
 ## 🔍 Automation Preview
 
-Before organizing the files, the application displays a preview like:
+Before processing, users can see exactly where each file will go.
+
+Example:
 
 ```text
 ┌────────────────────────┬──────────────────────┐
@@ -228,70 +299,47 @@ Before organizing the files, the application displays a preview like:
 
 ## 📂 Organized Folder Structure
 
-After automation, files are placed into category-based folders:
+The generated ZIP package follows a clean folder structure:
 
 ```text
 📦 Organized_Files
 │
 ├── 🖼️ Images
-│   ├── photo.jpg
-│   └── image.png
-│
 ├── 📄 Documents
-│   ├── resume.docx
-│   └── notes.txt
-│
 ├── 📕 PDF_Files
-│   └── report.pdf
-│
 ├── 📊 Excel_Files
-│   └── data.xlsx
-│
 ├── 📽️ PowerPoint_Files
-│   └── presentation.pptx
-│
 ├── 🎵 Audio_Files
-│   └── song.mp3
-│
 ├── 🎬 Video_Files
-│   └── video.mp4
-│
 ├── 📦 Archives
-│   └── backup.zip
-│
 ├── 🐍 Python_Files
-│   └── script.py
-│
 ├── 💻 Code_Files
-│   └── index.html
-│
 └── 📁 Other_Files
-    └── unknown.xyz
 ```
 
 ---
 
-## 🛡️ Duplicate File Protection
+## 🛡️ Duplicate Filename Handling
 
-The application intelligently handles duplicate filenames.
+The application prevents files from being overwritten when duplicate filenames are detected.
 
 For example:
 
 ```text
 Documents/
-
-resume.docx
-resume_1.docx
-resume_2.docx
+│
+├── resume.docx
+├── resume_1.docx
+└── resume_2.docx
 ```
 
-This prevents files from being overwritten when creating the organized ZIP package.
+This ensures that every uploaded file remains available in the final ZIP package.
 
 ---
 
 ## 📋 Automation Report
 
-After processing, users can download a detailed report containing:
+Users can download a text-based automation report containing:
 
 ```text
 CODEALPHA INTERNSHIP - TASK 3
@@ -339,9 +387,7 @@ Excel_Files: 2
 
 ---
 
-## 📦 Python Libraries
-
-This project uses:
+## 📦 Libraries Used
 
 ```text
 streamlit
@@ -351,7 +397,7 @@ zipfile
 io
 ```
 
-Most file-processing functionality is powered by Python's built-in libraries.
+The project uses Python's built-in libraries for most of the file-processing and ZIP-generation functionality.
 
 ---
 
@@ -367,15 +413,15 @@ Most file-processing functionality is powered by Python's built-in libraries.
 
 ---
 
-## ⚙️ Installation & Setup
+## ⚙️ Installation
 
-### 1️⃣ Clone Repository
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/Tehminaanwar543/CodeAlpha_Task3_File_Automation.git
 ```
 
-### 2️⃣ Open Project
+### 2️⃣ Open the Project
 
 ```bash
 cd CodeAlpha_Task3_File_Automation
@@ -387,7 +433,7 @@ cd CodeAlpha_Task3_File_Automation
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Run Streamlit
+### 4️⃣ Run the Application
 
 ```bash
 streamlit run app.py
@@ -405,8 +451,6 @@ streamlit
 
 ## 🎯 CodeAlpha Internship
 
-This project was developed as part of the:
-
 <div align="center">
 
 ### 💻 CodeAlpha Python Programming Internship
@@ -415,7 +459,7 @@ This project was developed as part of the:
 
 </div>
 
-The project demonstrates how Python can automate repetitive file-management tasks and provide users with a simple graphical interface through Streamlit.
+This project demonstrates how Python can be used to automate repetitive file-management tasks through a simple and interactive Streamlit application.
 
 ---
 
@@ -426,8 +470,6 @@ The project demonstrates how Python can automate repetitive file-management task
 # Tehmina Anwar
 
 ### AI/ML Engineer | Python Developer | Generative AI Enthusiast
-
-Building intelligent applications using:
 
 **Python • Machine Learning • Deep Learning • Generative AI • LLMs • NLP • Computer Vision • Streamlit**
 
@@ -455,22 +497,22 @@ Building intelligent applications using:
 
 ---
 
-## ⭐ Project Highlights
+## ⭐ Project Status
 
 <div align="center">
 
-| Feature                 | Status |
-| ----------------------- | ------ |
-| 📤 Multiple File Upload | ✅      |
-| 🤖 Automatic Detection  | ✅      |
-| 📂 Smart Categorization | ✅      |
-| 📊 File Statistics      | ✅      |
-| 🔍 Automation Preview   | ✅      |
-| 🧪 Demo Mode            | ✅      |
-| 📦 ZIP Generation       | ✅      |
-| 🛡️ Duplicate Handling  | ✅      |
-| 📋 Report Generation    | ✅      |
-| 🚀 Streamlit Deployment | ✅      |
+| Feature                      | Status |
+| ---------------------------- | ------ |
+| 📤 Multiple File Upload      | ✅      |
+| 🤖 Automatic Detection       | ✅      |
+| 📂 Smart Categorization      | ✅      |
+| 📊 File Statistics           | ✅      |
+| 🔍 Automation Preview        | ✅      |
+| 🧪 Demo Mode                 | ✅      |
+| 📦 ZIP Generation            | ✅      |
+| 🛡️ Duplicate Handling       | ✅      |
+| 📋 Report Generation         | ✅      |
+| 🚀 Live Streamlit Deployment | ✅      |
 
 </div>
 
@@ -478,10 +520,10 @@ Building intelligent applications using:
 
 <div align="center">
 
-### 🤖 Automate. Organize. Simplify.
+## 🤖 Automate. Organize. Simplify.
 
-**Made with ❤️ using Python & Streamlit**
+### Made with ❤️ using Python & Streamlit
 
-### ⭐ If you like this project, don't forget to star the repository!
+⭐ **If you like this project, consider starring the repository!**
 
 </div>
