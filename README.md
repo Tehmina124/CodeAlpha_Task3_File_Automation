@@ -1,7 +1,8 @@
 <div align="center">
 
-<img src="banner.png" alt="FILE AUTOMATION " width="100%">
+<img src="./FILE%20AUTOMATION.png" alt="FILE AUTOMATION Banner" width="100%">
 
+</div>
 # 🤖 FILE AUTOMATION
 
 ### ⚡ Smart File Organization with Python
