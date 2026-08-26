@@ -130,7 +130,7 @@ Clean and responsive Streamlit dashboard.
 
 ## 🔄 How It Works
 
-```text
+text
               📤 UPLOAD FILES
                     │
                     ▼
@@ -242,7 +242,7 @@ Click:
 
 The application creates examples such as:
 
-```text
+text
 demo_photo.jpg
 demo_image.png
 demo_document.txt
@@ -282,7 +282,7 @@ Before processing, users can see exactly where each file will go.
 
 Example:
 
-```text
+text
 ┌────────────────────────┬──────────────────────┐
 │ 📄 File Name           │ 📁 Destination       │
 ├────────────────────────┼──────────────────────┤
@@ -302,7 +302,7 @@ Example:
 
 The generated ZIP package follows a clean folder structure:
 
-```text
+text
 📦 Organized_Files
 │
 ├── 🖼️ Images
@@ -326,7 +326,7 @@ The application prevents files from being overwritten when duplicate filenames a
 
 For example:
 
-```text
+text
 Documents/
 │
 ├── resume.docx
@@ -342,7 +342,7 @@ This ensures that every uploaded file remains available in the final ZIP package
 
 Users can download a text-based automation report containing:
 
-```text
+text
 CODEALPHA INTERNSHIP - TASK 3
 TASK AUTOMATION WITH PYTHON SCRIPTS
 
@@ -390,7 +390,7 @@ Excel_Files: 2
 
 ## 📦 Libraries Used
 
-```text
+text
 streamlit
 pathlib
 collections
@@ -404,7 +404,7 @@ The project uses Python's built-in libraries for most of the file-processing and
 
 ## 📁 Project Structure
 
-```text
+text
 📦 CodeAlpha_Task3_File_Automation
 │
 ├── 📄 app.py
@@ -419,34 +419,34 @@ The project uses Python's built-in libraries for most of the file-processing and
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/Tehminaanwar543/CodeAlpha_Task3_File_Automation.git
+git clone https://github.com/Tehminaanwar124/CodeAlpha_Task3_File_Automation.git
 ```
 
 ### 2️⃣ Open the Project
 
-```bash
+bash
 cd CodeAlpha_Task3_File_Automation
-```
+
 
 ### 3️⃣ Install Dependencies
 
-```bash
+bash
 pip install -r requirements.txt
-```
+
 
 ### 4️⃣ Run the Application
 
-```bash
+bash
 streamlit run app.py
-```
+
 
 ---
 
 ## 📄 requirements.txt
 
-```text
+text
 streamlit
-```
+
 
 ---
 
@@ -482,8 +482,8 @@ This project demonstrates how Python can be used to automate repetitive file-man
 
 <div align="center">
 
-<a href="https://github.com/Tehminaanwar543">
-<img src="https://img.shields.io/badge/GitHub-Tehminaanwar543-181717?style=for-the-badge&logo=github">
+<a href="https://github.com/Tehminaanwar124">
+<img src="https://img.shields.io/badge/GitHub-Tehminaanwar124-181717?style=for-the-badge&logo=github">
 </a>
 
 <a href="https://www.linkedin.com/in/tehmina-anwar-77b8a8414">
