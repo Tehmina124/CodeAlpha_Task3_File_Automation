@@ -2,7 +2,8 @@
 
 <img src="./FILE%20AUTOMATION.png" alt="FILE AUTOMATION Banner" width="100%">
 
-</div>
+<br><br>
+
 # 🤖 FILE AUTOMATION
 
 ### ⚡ Smart File Organization with Python
@@ -23,14 +24,13 @@
   <img src="https://img.shields.io/badge/🚀%20LIVE%20DEMO-Click%20Here-success?style=for-the-badge" alt="Live Demo">
 </a>
 
-<a href="https://github.com/Tehminaanwar543">
-  <img src="https://img.shields.io/badge/GitHub-Tehminaanwar543-black?style=for-the-badge&logo=github" alt="GitHub">
+<a href="https://github.com/tehmina124">
+  <img src="https://img.shields.io/badge/GitHub-tehmina124-black?style=for-the-badge&logo=github" alt="GitHub">
 </a>
 
 </div>
 
 ---
-
 ## 🌟 Project Overview
 
 **AI AUTOMATION** is a Python-based file automation tool developed for **CodeAlpha Internship — Task 3**.
