@@ -1,3 +1,10 @@
+# ============================================================
+# CODEALPHA INTERNSHIP - TASK 3
+# TASK AUTOMATION WITH PYTHON SCRIPTS
+# File Automation Tool
+# Created by: Tehmina Anwar
+# ============================================================
+
 import streamlit as st
 from pathlib import Path
 from collections import Counter
@@ -10,9 +17,10 @@ import io
 # ============================================================
 
 st.set_page_config(
-    page_title="CodeAlpha Task 3",
+    page_title="CodeAlpha Task 3 - File Automation",
     page_icon="🤖",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
 
@@ -43,17 +51,18 @@ FILE_CATEGORIES = {
     ],
 
     "Audio_Files": [
-        ".mp3", ".wav", ".aac", ".flac",
-        ".ogg", ".m4a"
+        ".mp3", ".wav", ".aac",
+        ".flac", ".ogg", ".m4a"
     ],
 
     "Video_Files": [
-        ".mp4", ".avi", ".mkv", ".mov",
-        ".wmv", ".flv", ".webm"
+        ".mp4", ".avi", ".mkv",
+        ".mov", ".wmv", ".flv", ".webm"
     ],
 
     "Archives": [
-        ".zip", ".rar", ".7z", ".tar", ".gz"
+        ".zip", ".rar", ".7z",
+        ".tar", ".gz"
     ],
 
     "Python_Files": [
@@ -61,35 +70,78 @@ FILE_CATEGORIES = {
     ],
 
     "Code_Files": [
-        ".html", ".css", ".js", ".java",
-        ".cpp", ".c", ".json", ".xml", ".sql"
+        ".html", ".css", ".js",
+        ".java", ".cpp", ".c",
+        ".json", ".xml", ".sql"
     ]
 }
 
 
 # ============================================================
-# CSS
+# CATEGORY ICONS
+# ============================================================
+
+CATEGORY_ICONS = {
+    "Images": "🖼️",
+    "Documents": "📄",
+    "PDF_Files": "📕",
+    "Excel_Files": "📊",
+    "PowerPoint_Files": "📽️",
+    "Audio_Files": "🎵",
+    "Video_Files": "🎬",
+    "Archives": "📦",
+    "Python_Files": "🐍",
+    "Code_Files": "💻",
+    "Other_Files": "📁"
+}
+
+
+# ============================================================
+# CUSTOM CSS
 # ============================================================
 
 st.markdown(
     """
     <style>
 
-    .title {
+    .main-title {
         text-align: center;
-        font-size: 42px;
-        font-weight: bold;
+        font-size: 45px;
+        font-weight: 800;
+        margin-bottom: 5px;
     }
 
     .subtitle {
         text-align: center;
-        font-size: 20px;
+        font-size: 21px;
+        margin-bottom: 5px;
     }
 
     .creator {
         text-align: center;
         font-size: 18px;
-        font-weight: bold;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    .info-box {
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid rgba(128,128,128,0.25);
+        margin-bottom: 20px;
+    }
+
+    .category-card {
+        padding: 15px;
+        border-radius: 12px;
+        border: 1px solid rgba(128,128,128,0.25);
+        margin-bottom: 10px;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 25px;
+        font-size: 16px;
     }
 
     </style>
@@ -103,7 +155,7 @@ st.markdown(
 # ============================================================
 
 st.markdown(
-    '<div class="title">🤖 File Automation Tool</div>',
+    '<div class="main-title">🤖 File Automation Tool</div>',
     unsafe_allow_html=True
 )
 
@@ -125,19 +177,84 @@ st.divider()
 
 
 # ============================================================
-# ABOUT
+# SIDEBAR
+# ============================================================
+
+with st.sidebar:
+
+    st.header("🤖 File Automation")
+
+    st.write(
+        "Automatically organize files "
+        "according to their extensions."
+    )
+
+    st.divider()
+
+    st.subheader("✨ Supported Categories")
+
+    for category in FILE_CATEGORIES:
+
+        icon = CATEGORY_ICONS.get(
+            category,
+            "📁"
+        )
+
+        st.write(
+            f"{icon} {category}"
+        )
+
+    st.divider()
+
+    st.caption(
+        "CodeAlpha Internship"
+    )
+
+    st.caption(
+        "Task 3 — Task Automation"
+    )
+
+    st.caption(
+        "Created by Tehmina Anwar"
+    )
+
+
+# ============================================================
+# ABOUT PROJECT
 # ============================================================
 
 st.header("🎯 About This Project")
 
-st.write(
+st.markdown(
     """
-    This Python automation tool automatically organizes files
-    into separate categories based on their file extensions.
+    <div class="info-box">
 
-    You can upload your own files or use Demo Mode to test
-    the application without having any files on your laptop.
-    """
+    This Python automation tool automatically organizes
+    uploaded files into separate categories based on their
+    file extensions.
+
+    Instead of manually sorting files, the application
+    analyzes every file and places it into the appropriate
+    category folder.
+
+    <br>
+
+    <b>🚀 Main Features:</b>
+
+    <br><br>
+
+    • Upload multiple files<br>
+    • Automatic file type detection<br>
+    • File statistics<br>
+    • Automation preview<br>
+    • Category-wise organization<br>
+    • Duplicate filename handling<br>
+    • Organized ZIP download<br>
+    • Demo mode for testing<br>
+
+    </div>
+    """,
+    unsafe_allow_html=True
 )
 
 
@@ -146,6 +263,9 @@ st.write(
 # ============================================================
 
 def get_category(extension):
+    """
+    Detect file category using file extension.
+    """
 
     extension = extension.lower()
 
@@ -158,64 +278,135 @@ def get_category(extension):
 
 
 # ============================================================
-# DEMO FILES
+# DEMO FILE CREATOR
 # ============================================================
 
 def create_demo_files():
+    """
+    Create sample files for demonstration.
+    """
 
     demo_files = [
-        ("demo_photo.jpg", "Images"),
-        ("demo_image.png", "Images"),
-        ("demo_document.txt", "Documents"),
-        ("demo_report.pdf", "PDF_Files"),
-        ("demo_data.csv", "Excel_Files"),
-        ("demo_presentation.pptx", "PowerPoint_Files"),
-        ("demo_song.mp3", "Audio_Files"),
-        ("demo_video.mp4", "Video_Files"),
-        ("demo_archive.zip", "Archives"),
-        ("demo_code.py", "Python_Files"),
-        ("demo_page.html", "Code_Files"),
-        ("demo_unknown.xyz", "Other_Files")
+
+        (
+            "demo_photo.jpg",
+            "Images"
+        ),
+
+        (
+            "demo_image.png",
+            "Images"
+        ),
+
+        (
+            "demo_document.txt",
+            "Documents"
+        ),
+
+        (
+            "demo_resume.docx",
+            "Documents"
+        ),
+
+        (
+            "demo_report.pdf",
+            "PDF_Files"
+        ),
+
+        (
+            "demo_data.csv",
+            "Excel_Files"
+        ),
+
+        (
+            "demo_sheet.xlsx",
+            "Excel_Files"
+        ),
+
+        (
+            "demo_presentation.pptx",
+            "PowerPoint_Files"
+        ),
+
+        (
+            "demo_song.mp3",
+            "Audio_Files"
+        ),
+
+        (
+            "demo_video.mp4",
+            "Video_Files"
+        ),
+
+        (
+            "demo_archive.zip",
+            "Archives"
+        ),
+
+        (
+            "demo_code.py",
+            "Python_Files"
+        ),
+
+        (
+            "demo_page.html",
+            "Code_Files"
+        ),
+
+        (
+            "demo_unknown.xyz",
+            "Other_Files"
+        )
     ]
 
     files = []
 
     for filename, category in demo_files:
 
-        files.append({
-            "name": filename,
-            "category": category,
-            "data": (
-                f"Demo file created for CodeAlpha Task 3\n"
-                f"File: {filename}\n"
-                f"Category: {category}\n"
-            ).encode()
-        })
+        content = (
+            "CodeAlpha Internship - Task 3\n"
+            "File Automation Demo\n\n"
+            f"File Name: {filename}\n"
+            f"Category: {category}\n"
+        )
+
+        files.append(
+            {
+                "name": filename,
+                "category": category,
+                "data": content.encode("utf-8")
+            }
+        )
 
     return files
 
 
 # ============================================================
-# UPLOAD FILES
+# UPLOAD SECTION
 # ============================================================
 
 st.header("📤 Upload Your Files")
 
+st.write(
+    "Select one or multiple files to analyze and organize."
+)
+
 uploaded_files = st.file_uploader(
-    "Choose files to automate",
-    accept_multiple_files=True
+    "Choose files",
+    accept_multiple_files=True,
+    type=None
 )
 
 
 # ============================================================
-# DEMO BUTTON
+# DEMO MODE
 # ============================================================
 
 st.header("🧪 Demo Mode")
 
 st.write(
-    "Don't have files on your laptop? "
-    "No problem! Generate sample files automatically."
+    "Don't have files available? "
+    "Generate sample files and test the automation."
 )
 
 demo_button = st.button(
@@ -225,11 +416,31 @@ demo_button = st.button(
 
 
 # ============================================================
+# RESET BUTTON
+# ============================================================
+
+if st.button(
+    "🔄 Reset Demo",
+    use_container_width=True
+):
+
+    if "demo_files" in st.session_state:
+
+        del st.session_state["demo_files"]
+
+    st.rerun()
+
+
+# ============================================================
 # PREPARE FILE DATA
 # ============================================================
 
 file_data = []
 
+
+# ------------------------------------------------------------
+# USER UPLOADS
+# ------------------------------------------------------------
 
 if uploaded_files:
 
@@ -239,12 +450,18 @@ if uploaded_files:
             uploaded_file.name
         ).suffix.lower()
 
-        file_data.append({
-            "name": uploaded_file.name,
-            "category": get_category(extension),
-            "data": uploaded_file.getvalue()
-        })
+        file_data.append(
+            {
+                "name": uploaded_file.name,
+                "category": get_category(extension),
+                "data": uploaded_file.getvalue()
+            }
+        )
 
+
+# ------------------------------------------------------------
+# DEMO BUTTON
+# ------------------------------------------------------------
 
 elif demo_button:
 
@@ -252,6 +469,10 @@ elif demo_button:
 
     st.session_state["demo_files"] = file_data
 
+
+# ------------------------------------------------------------
+# STORED DEMO
+# ------------------------------------------------------------
 
 elif "demo_files" in st.session_state:
 
@@ -268,6 +489,7 @@ if file_data:
         f"✅ {len(file_data)} files ready for automation!"
     )
 
+
     # ========================================================
     # STATISTICS
     # ========================================================
@@ -279,21 +501,36 @@ if file_data:
 
     st.header("📊 File Statistics")
 
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4 = st.columns(4)
 
     with col1:
+
         st.metric(
             "📦 Total Files",
             len(file_data)
         )
 
     with col2:
+
         st.metric(
             "📁 Categories",
             len(statistics)
         )
 
     with col3:
+
+        image_count = statistics.get(
+            "Images",
+            0
+        )
+
+        st.metric(
+            "🖼️ Images",
+            image_count
+        )
+
+    with col4:
+
         st.metric(
             "🤖 Status",
             "Ready"
@@ -301,21 +538,30 @@ if file_data:
 
 
     # ========================================================
-    # CATEGORY STATISTICS
+    # CATEGORY SUMMARY
     # ========================================================
 
     st.subheader("📈 Category Summary")
 
+    categories = sorted(
+        statistics.items()
+    )
+
     cols = st.columns(4)
 
     for index, (category, count) in enumerate(
-        sorted(statistics.items())
+        categories
     ):
+
+        icon = CATEGORY_ICONS.get(
+            category,
+            "📁"
+        )
 
         with cols[index % 4]:
 
             st.metric(
-                category,
+                f"{icon} {category}",
                 count
             )
 
@@ -330,10 +576,19 @@ if file_data:
 
     for file in file_data:
 
-        preview.append({
-            "📄 File Name": file["name"],
-            "📁 Destination": file["category"]
-        })
+        icon = CATEGORY_ICONS.get(
+            file["category"],
+            "📁"
+        )
+
+        preview.append(
+            {
+                "📄 File Name": file["name"],
+                "📁 Destination": (
+                    f"{icon} {file['category']}"
+                )
+            }
+        )
 
     st.dataframe(
         preview,
@@ -350,21 +605,30 @@ if file_data:
 
     for category in sorted(statistics):
 
-        st.markdown(
-            f"### 📁 {category}"
+        icon = CATEGORY_ICONS.get(
+            category,
+            "📁"
         )
 
-        for file in file_data:
+        st.subheader(
+            f"{icon} {category}"
+        )
 
-            if file["category"] == category:
+        category_files = [
+            file["name"]
+            for file in file_data
+            if file["category"] == category
+        ]
 
-                st.write(
-                    f"📄 {file['name']}"
-                )
+        for filename in category_files:
+
+            st.write(
+                f"📄 {filename}"
+            )
 
 
     # ========================================================
-    # ZIP CREATION
+    # CREATE ZIP
     # ========================================================
 
     def create_zip(files):
@@ -373,29 +637,39 @@ if file_data:
 
         with zipfile.ZipFile(
             zip_buffer,
-            "w",
-            zipfile.ZIP_DEFLATED
+            mode="w",
+            compression=zipfile.ZIP_DEFLATED
         ) as zip_file:
 
-            used_names = set()
+            used_paths = set()
 
             for file in files:
 
                 category = file["category"]
-                filename = file["name"]
 
-                original = filename
+                original_filename = file["name"]
+
+                filename = original_filename
+
+                path = (
+                    f"{category}/{filename}"
+                )
+
                 counter = 1
 
-                path = f"{category}/{filename}"
+                while path in used_paths:
 
-                while path in used_names:
+                    stem = Path(
+                        original_filename
+                    ).stem
 
-                    stem = Path(original).stem
-                    suffix = Path(original).suffix
+                    suffix = Path(
+                        original_filename
+                    ).suffix
 
                     filename = (
-                        f"{stem}_{counter}{suffix}"
+                        f"{stem}_{counter}"
+                        f"{suffix}"
                     )
 
                     path = (
@@ -404,7 +678,7 @@ if file_data:
 
                     counter += 1
 
-                used_names.add(path)
+                used_paths.add(path)
 
                 zip_file.writestr(
                     path,
@@ -417,10 +691,15 @@ if file_data:
 
 
     # ========================================================
-    # ORGANIZE BUTTON
+    # AUTOMATION
     # ========================================================
 
     st.header("🚀 Run Automation")
+
+    st.write(
+        "Click the button below to organize all files "
+        "into category folders and create a ZIP package."
+    )
 
     if st.button(
         "🚀 ORGANIZE ALL FILES",
@@ -428,7 +707,13 @@ if file_data:
         type="primary"
     ):
 
-        zip_data = create_zip(file_data)
+        with st.spinner(
+            "🤖 Organizing files..."
+        ):
+
+            zip_data = create_zip(
+                file_data
+            )
 
         st.success(
             "🎉 Automation completed successfully!"
@@ -439,14 +724,101 @@ if file_data:
         st.download_button(
             label="📥 Download Organized ZIP",
             data=zip_data,
-            file_name="Tehmina_CodeAlpha_Task3.zip",
+            file_name=(
+                "Tehmina_CodeAlpha_Task3_"
+                "Organized_Files.zip"
+            ),
             mime="application/zip",
             use_container_width=True
         )
 
 
+    # ========================================================
+    # DOWNLOAD REPORT
+    # ========================================================
+
+    st.header("📋 Automation Report")
+
+    report_lines = []
+
+    report_lines.append(
+        "CODEALPHA INTERNSHIP - TASK 3"
+    )
+
+    report_lines.append(
+        "TASK AUTOMATION WITH PYTHON SCRIPTS"
+    )
+
+    report_lines.append(
+        "Created by: Tehmina Anwar"
+    )
+
+    report_lines.append(
+        ""
+    )
+
+    report_lines.append(
+        f"Total Files: {len(file_data)}"
+    )
+
+    report_lines.append(
+        f"Categories: {len(statistics)}"
+    )
+
+    report_lines.append(
+        ""
+    )
+
+    report_lines.append(
+        "FILE ORGANIZATION"
+    )
+
+    report_lines.append(
+        "-" * 50
+    )
+
+    for file in file_data:
+
+        report_lines.append(
+            f"{file['name']} "
+            f"-> {file['category']}"
+        )
+
+    report_lines.append(
+        ""
+    )
+
+    report_lines.append(
+        "CATEGORY SUMMARY"
+    )
+
+    report_lines.append(
+        "-" * 50
+    )
+
+    for category, count in sorted(
+        statistics.items()
+    ):
+
+        report_lines.append(
+            f"{category}: {count}"
+        )
+
+    report = "\n".join(
+        report_lines
+    )
+
+    st.download_button(
+        label="📄 Download Automation Report",
+        data=report,
+        file_name="CodeAlpha_Task3_Report.txt",
+        mime="text/plain",
+        use_container_width=True
+    )
+
+
 # ============================================================
-# HOW IT WORKS
+# EMPTY STATE / HOW IT WORKS
 # ============================================================
 
 else:
@@ -465,7 +837,7 @@ else:
         st.subheader("1️⃣ Upload")
 
         st.write(
-            "Upload your own files."
+            "Upload one or multiple files."
         )
 
     with col2:
@@ -473,7 +845,8 @@ else:
         st.subheader("2️⃣ Analyze")
 
         st.write(
-            "The application detects file types automatically."
+            "The application detects the file "
+            "type using its extension."
         )
 
     with col3:
@@ -481,7 +854,8 @@ else:
         st.subheader("3️⃣ Organize")
 
         st.write(
-            "Files are placed into category folders."
+            "Files are placed into category "
+            "folders inside an organized ZIP."
         )
 
 
@@ -493,7 +867,7 @@ st.divider()
 
 st.markdown(
     """
-    <div style="text-align:center; padding:20px">
+    <div class="footer">
 
     🤖 <strong>CodeAlpha Internship — Task 3</strong><br>
 
