@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="banner.png" alt="AI AUTOMATION Banner" width="100%">
+<img src="banner.png" alt="AI AUTOMATION " width="100%">
 
 # 🤖 AI AUTOMATION
 
